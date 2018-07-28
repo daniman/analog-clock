@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Prata');
+
+@color-line: #eee;
+@color-black: #333;
+@color-white: #fff;
+@color-accent: red;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font-weight: light;
+  line-height: 1;
+  font-size: 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.clock {
+  border-radius: 100%;
+  border: 1px solid @color-line;
+  overflow: hidden;
+}
+
+.ticks,
+.rings,
+.hands {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+}
+
+.hours .tick {
+  font-family: 'Prata', serif;
+  font-size: 35px;
+}
+
+.seconds .tick {
+  font-size: 0.75rem;
+}
+
+.marker {
+  position: absolute;
+  transform-origin: 0% 0%;
+  background-color: @color-accent;
+  height: 1px;
+  text-align: right;
+  padding: 0 70px;
+  color: @color-accent;
+  font-size: 0.75rem;
+
+  .labels {
+    transform: translateY(-50%);
+
+    > * {
+      padding: 2px 0;
+    }
+  }
+}
+
+.hand {
+  position: absolute;
+  transform-origin: 14px 50%;
+  background-color: @color-black;
+  color: @color-white;
+  text-align: right;
+  padding: 4px 10px;
+  border-radius: 14px;
+
+  &.seconds {
+    background-color: @color-accent;
+    transform-origin: 2px 50%;
+    padding: 2px 0;
+    height: 1px;
+  }
+}
+
+.ring {
+  transform: translate(-50%, -50%);
+  border: 1px solid @color-line;
+  position: absolute;
+  border-radius: 100%;
+}
+
+.tock {
+  .line {
+    width: 200px;
+    position: absolute;
+    transform-origin: 0% 0%;
+    height: 1px;
+    background-color: @color-line;
+
+    .label {
+      color: fade(#333, 50%);
+      text-align: right;
+      padding: 0 70px;
+      transform: translateY(-50%);
+
+      &.flip {
+        text-align: left;
+        transform: translateY(-50%) scale(-1, -1);
+      }
+    }
+  }
+
+  .tick {
+    display: inline-block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: @color-black;
+  }
+}
+
+.slice {
+  position: absolute;
+  transform-origin: 0 0;
+
+  .bg {
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+
+    &.light {
+      border-right-color: fade(@color-line, 25%);
+    }
+
+    &.dark {
+      border-right-color: fade(@color-line, 50%);
+    }
+  }
+}
