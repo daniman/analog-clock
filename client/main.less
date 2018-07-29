@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Prata');
 
 @color-line: fade(#333, 10%);
-@color-black: #333;
-@color-white: #fff;
 @color-accent: #f44336;
 @color-secondary: #03a9f4;
+
+@color-lightest: #fff;
+@color-lighter: #f8f8f8;
+@color-light: #f3f3f3;
+@color-mediumlight: #eee;
+@color-medium: #ccc;
+@color-mediumdark: #999;
+@color-dark: #666;
+@color-darker: #444;
+@color-darkest: #333;
 
 * {
   box-sizing: border-box;
@@ -27,7 +35,6 @@ body {
   line-height: 1;
   font-size: 20px;
   font-family: 'Open Sans Condensed', sans-serif;
-  background-color: orange;
   position: relative;
 }
 
@@ -36,22 +43,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &.light {
-    background-color: @color-white;
-
-    .signature a {
-      color: @color-black;
-    }
-  }
-
-  &.dark {
-    background-color: @color-black;
-
-    .signature a {
-      color: @color-white;
-    }
-  }
+  transition: background-color 150ms ease-out;
 }
 
 .up {
@@ -63,7 +55,7 @@ body {
   border-radius: 100%;
   border: 1px solid @color-line;
   overflow: hidden;
-  background-color: @color-white;
+  background-color: @color-lightest;
 }
 
 .fulcrum {
@@ -124,8 +116,8 @@ body {
 .hand {
   position: absolute;
   transform-origin: 14px 50%;
-  background-color: @color-black;
-  color: @color-white;
+  background-color: @color-darkest;
+  color: @color-lightest;
   padding: 4px 10px;
   border-radius: 15px;
   border: 1px solid #222;
@@ -135,7 +127,7 @@ body {
 
   i {
     margin-right: 8px;
-    color: fade(@color-white, 80%);
+    color: fade(@color-lightest, 80%);
     font-size: 0.75rem;
   }
 
@@ -185,7 +177,7 @@ body {
     display: inline-block;
     position: absolute;
     transform: translate(-50%, -50%);
-    color: @color-black;
+    color: @color-darkest;
   }
 }
 
@@ -199,11 +191,11 @@ body {
     border: 0 solid transparent;
 
     &.light {
-      border-right-color: fade(@color-black, 10%);
+      border-right-color: fade(@color-darkest, 10%);
     }
 
     &.dark {
-      border-right-color: fade(@color-black, 20%);
+      border-right-color: fade(@color-darkest, 20%);
     }
   }
 }
@@ -236,26 +228,96 @@ body {
     margin-left: 5px;
     cursor: pointer;
     transition: all 150ms ease-out;
-    border: 1px solid fade(@color-white, 50%);
+    border: 1px solid transparent;
+    vertical-align: top;
+    text-align: center;
 
     &:hover {
-      border-color: @color-accent !important;
-    }
-
-    &.light {
-      background-color: @color-white;
-    }
-
-    &.dark {
-      background-color: @color-black;
+      border-color: @color-secondary !important;
     }
   }
 }
 
-.home.light .patch {
-  border: 1px solid @color-black;
-}
+.home,
+.patch {
+  &.lightest {
+    background-color: @color-lightest;
 
-.home.dark .patch {
-  border: 1px solid @color-white;
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.lighter {
+    background-color: @color-lighter;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.light {
+    background-color: @color-light;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.mediumlight {
+    background-color: @color-mediumlight;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.medium {
+    background-color: @color-medium;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.mediumdark {
+    background-color: @color-mediumdark;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.dark {
+    background-color: @color-dark;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.darker {
+    background-color: @color-darker;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.darkest {
+    background-color: @color-darkest;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
 }
