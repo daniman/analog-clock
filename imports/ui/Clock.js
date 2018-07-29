@@ -3,7 +3,8 @@ import classnames from 'classnames';
 
 import Ring from './Ring';
 import Tick from './Tick';
-import TickingMarker from './TickingMarker';
+import TickingGMTMarker from './TickingGMTMarker';
+import TickingDateLineMarker from './TickingDateLineMarker';
 import TickingHourHand from './TickingHourHand';
 import TickingSecondsHand from './TickingSecondsHand';
 
@@ -11,18 +12,18 @@ export default class extends Component {
   rings = 2;
 
   ticks = [
-    { tick: '01' },
-    { tick: '02' },
-    { tick: '03' },
-    { tick: '04' },
-    { tick: '05' },
-    { tick: '06', shade: 'light', label: 'Dusk' },
-    { tick: '07', shade: 'light' },
-    { tick: '08', shade: 'dark' },
-    { tick: '09', shade: 'dark' },
-    { tick: '10', shade: 'dark' },
-    { tick: '11', shade: 'dark' },
-    { tick: '12', shade: 'dark', label: 'Midnight' },
+    { tick: '13' },
+    { tick: '14' },
+    { tick: '15' },
+    { tick: '16' },
+    { tick: '17' },
+    { tick: '18', shade: 'light', label: 'Dusk' },
+    { tick: '19', shade: 'light' },
+    { tick: '20', shade: 'dark' },
+    { tick: '21', shade: 'dark' },
+    { tick: '22', shade: 'dark' },
+    { tick: '23', shade: 'dark' },
+    { tick: '24', shade: 'dark', label: 'Midnight' },
     { tick: '01', shade: 'dark' },
     { tick: '02', shade: 'dark' },
     { tick: '03', shade: 'dark' },
@@ -79,22 +80,29 @@ export default class extends Component {
         </div>
 
         <div className="hands">
-          <TickingMarker length={size / 2} />
+          <TickingGMTMarker length={size / 2} />
+          <TickingDateLineMarker length={size / 2} />
 
-          <TickingHourHand label="San Francisco" timezone="US/Pacific" />
+          <TickingHourHand
+            label="San Francisco"
+            timezone="US/Pacific"
+            accent={true}
+          />
           <TickingHourHand label="Helsinki" timezone="Europe/Helsinki" />
           <TickingHourHand label="Bangkok" timezone="Asia/Bangkok" />
-          <TickingHourHand label="East Coast" timezone="US/Eastern" />
+          <TickingHourHand label="Boston" timezone="US/Eastern" />
           <TickingHourHand
             label="Aguascalientes"
             timezone="America/Mexico_City"
           />
           <TickingHourHand label="Lagos" timezone="Africa/Lagos" />
           <TickingHourHand label="Melbourne" timezone="Australia/Melbourne" />
-          <TickingHourHand label="Amsterdom" timezone="Europe/Oslo" />
+          <TickingHourHand label="Amsterdam" timezone="Europe/Oslo" />
 
           <TickingSecondsHand length={size / 6 - 10} />
         </div>
+
+        <div className="fulcrum" />
       </div>
     );
   }

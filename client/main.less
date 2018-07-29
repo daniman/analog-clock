@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Prata');
 
-@color-line: #eee;
+@color-line: fade(#333, 10%);
 @color-black: #333;
 @color-white: #fff;
-@color-accent: red;
+@color-accent: #f44336;
+@color-secondary: #03a9f4;
 
 * {
   box-sizing: border-box;
@@ -17,10 +18,26 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
+.up {
+  transform: scale(-1, -1);
+  display: inline-block;
+}
+
 .clock {
   border-radius: 100%;
   border: 1px solid @color-line;
   overflow: hidden;
+}
+
+.fulcrum {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #222;
+  transform: translate(-50%, -50%);
 }
 
 .ticks,
@@ -45,12 +62,20 @@ body {
 .marker {
   position: absolute;
   transform-origin: 0% 0%;
-  background-color: @color-accent;
-  height: 1px;
+  border-top: 1px solid @color-accent;
   text-align: right;
   padding: 0 70px;
   color: @color-accent;
   font-size: 0.75rem;
+
+  &.dashed {
+    border-top-style: dashed;
+    border-color: fade(@color-accent, 100%);
+
+    .labels {
+      color: fade(@color-accent, 100%);
+    }
+  }
 
   .labels {
     transform: translateY(-100%);
@@ -65,13 +90,26 @@ body {
   color: @color-white;
   text-align: right;
   padding: 4px 10px;
-  border-radius: 14px;
+  border-radius: 15px;
+  border: 1px solid #222;
+
+  i {
+    margin-right: 10px;
+    color: fade(@color-white, 80%);
+    font-size: 0.75rem;
+  }
 
   &.seconds {
     background-color: @color-accent;
     transform-origin: 2px 50%;
     padding: 2px 0;
     height: 1px;
+    border: none;
+  }
+
+  &.accent {
+    background-color: @color-secondary;
+    border-color: darken(@color-secondary, 5%);
   }
 }
 
@@ -108,6 +146,7 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     color: @color-black;
+    z-index: 999;
   }
 }
 
@@ -121,11 +160,11 @@ body {
     border: 0 solid transparent;
 
     &.light {
-      border-right-color: fade(@color-line, 25%);
+      border-right-color: fade(@color-black, 10%);
     }
 
     &.dark {
-      border-right-color: fade(@color-line, 50%);
+      border-right-color: fade(@color-black, 20%);
     }
   }
 }

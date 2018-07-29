@@ -3,10 +3,11 @@ import classnames from 'classnames';
 
 export default class extends Component {
   render() {
-    const { degree, length, label, type } = this.props;
+    const { degree, length, label, tertiary, type, accent } = this.props;
+
     return (
       <div
-        className={classnames(['hand', type])}
+        className={classnames(['hand', type, { accent }])}
         style={{
           width: length,
           transform: classnames([
@@ -17,6 +18,12 @@ export default class extends Component {
           ])
         }}
       >
+        {tertiary && (
+          <i>
+            UTC {tertiary > 0 && '+'}
+            {tertiary}
+          </i>
+        )}
         {label}
       </div>
     );

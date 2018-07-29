@@ -34,7 +34,7 @@ export default class extends Component {
     const { degree } = this.state;
 
     return (
-      <Marker radius={length} degree={degree} label="Greenwich Mountain Time" />
+      <Marker radius={length} degree={degree} label="Greenwich Mean Time" />
     );
   }
 }

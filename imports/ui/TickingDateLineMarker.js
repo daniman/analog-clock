@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import moment from 'moment-timezone';
+import moment from 'moment';
 
-import Hand from './Hand';
+import Marker from './Marker';
 
 export default class extends Component {
   constructor(props, context) {
     super(props, context);
 
     this.getDegree = () => {
-      const tz = moment().tz(props.timezone);
-
+      const utc = moment.utc(moment());
       const tocks = 24 * 60;
-      const theta = 60 * tz.hours() + tz.minutes();
-
-      return 360 * (theta / tocks) + 180; // + 180 because the clock us "upside down", midnight is 180 not 0
+      const theta = 60 * utc.hours() + utc.minutes();
+      return 360 * (theta / tocks);
     };
 
     this.state = {
@@ -32,17 +30,19 @@ export default class extends Component {
   }
 
   render() {
-    const { label, timezone, accent = false } = this.props;
+    const { length } = this.props;
     const { degree } = this.state;
-    const tz = moment().tz(timezone);
 
     return (
-      <Hand
-        accent={accent}
-        length={200}
+      <Marker
+        radius={length}
         degree={degree}
-        label={label}
-        tertiary={tz.utcOffset() / 60}
+        label={
+          <span>
+            <span className="up">↓</span> International Date Line
+          </span>
+        }
+        type="dashed"
       />
     );
   }
