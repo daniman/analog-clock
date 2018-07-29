@@ -83,11 +83,7 @@ export default class extends Component {
           <TickingGMTMarker length={size / 2} />
           <TickingDateLineMarker length={size / 2} />
 
-          <TickingHourHand
-            label="San Francisco"
-            timezone="US/Pacific"
-            accent={true}
-          />
+          <TickingHourHand label="San Francisco" timezone="US/Pacific" />
           <TickingHourHand label="Helsinki" timezone="Europe/Helsinki" />
           <TickingHourHand label="Bangkok" timezone="Asia/Bangkok" />
           <TickingHourHand label="Boston" timezone="US/Eastern" />

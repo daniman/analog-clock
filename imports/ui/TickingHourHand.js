@@ -35,10 +35,11 @@ export default class extends Component {
     const { label, timezone, accent = false } = this.props;
     const { degree } = this.state;
     const tz = moment().tz(timezone);
+    const d = new Date();
 
     return (
       <Hand
-        accent={accent}
+        accent={tz.hours() === d.getHours()}
         length={200}
         degree={degree}
         label={label}

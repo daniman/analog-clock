@@ -24,7 +24,7 @@ export default class extends Component {
             {tertiary}
           </i>
         )}
-        {label}
+        <span>{label}</span>
       </div>
     );
   }

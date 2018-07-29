@@ -1,10 +1,11 @@
-- [ ] International date line
-- [ ] Add dates around the midnight line
 - [ ] Add people's photos? Or work in that concept
 - [ ] Host on clock.apollographql.com
-- [ ] Better configurability
+- [ ] Easy config file for changes
 - [ ] Break out components
 - [ ] DB for easier hand configuration/changing?
-- [ ] Auto-detect which timezone you're in
+- [ ] Display dates around midnight and international date line
+
+- [x] Background color selector
+- [x] International date line
+- [x] Auto-detect which timezone you're in
 - [x] GMT offsets on hands
-- [ ] Display days
