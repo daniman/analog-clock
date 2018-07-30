@@ -1,4 +1,5 @@
 Ideas:
+- [ ] Add in user's DND times: https://api.slack.com/methods/dnd.info
 - [ ] Dynamic daylight displays
 - [ ] Add the ability to toggle cities if you click the arm (Apollo East)
 - [ ] Add a meeting time slider, so you can drag hands around to predict how your meeting will affect different timezones
