@@ -79,6 +79,7 @@ export default class extends Component {
             interval="minutes"
             type="ticker"
           />
+
           <TickingHand
             height={4}
             length={size / 6 - 10}

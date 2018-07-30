@@ -18,7 +18,7 @@ export default class extends Component {
     const torad = angle => angle * (Math.PI / 180);
 
     return (
-      <div className={classnames(className, 'tock')}>
+      <div className={classnames(className, 'tick')}>
         {shade && (
           <div
             className="slice"

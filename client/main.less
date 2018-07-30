@@ -64,7 +64,6 @@ body {
   border-radius: 100%;
   background-color: darken(@color-darkest, 10%);
   transform: translate(-50%, -50%);
-  position: absolute;
 }
 
 .center {
@@ -73,6 +72,10 @@ body {
   top: 50%;
   width: 0;
   height: 0;
+
+  > * {
+    position: absolute;
+  }
 }
 
 .hours .value {
@@ -85,7 +88,26 @@ body {
   font-size: 0.75rem;
 }
 
-.tock {
+.tick {
+  .slice {
+    position: absolute;
+    transform-origin: 0 0;
+
+    .bg {
+      width: 0;
+      height: 0;
+      border: 0 solid transparent;
+
+      &.light {
+        border-right-color: @color-mediumlight;
+      }
+
+      &.dark {
+        border-right-color: @color-medium;
+      }
+    }
+  }
+
   .line {
     width: 200px;
     position: absolute;
@@ -111,24 +133,5 @@ body {
     position: absolute;
     transform: translate(-50%, -50%);
     color: @color-darkest;
-  }
-}
-
-.slice {
-  position: absolute;
-  transform-origin: 0 0;
-
-  .bg {
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
-
-    &.light {
-      border-right-color: @color-mediumlight;
-    }
-
-    &.dark {
-      border-right-color: @color-medium;
-    }
   }
 }
