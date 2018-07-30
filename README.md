@@ -7,6 +7,7 @@ Ideas:
 - [ ] DB for easier hand configuration/changing?
 - [ ] Display dates around midnight and international date line
 - [ ] Make a size changer that gets saved in local storage
+- [x] Minute hand
 - [x] Background color selector
 - [x] International date line
 - [x] Auto-detect which timezone you're in

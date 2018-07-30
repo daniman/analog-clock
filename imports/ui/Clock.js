@@ -7,6 +7,7 @@ import TickingGMTMarker from './TickingGMTMarker';
 import TickingDateLineMarker from './TickingDateLineMarker';
 import TickingHourHand from './TickingHourHand';
 import TickingSecondsHand from './TickingSecondsHand';
+import TickingMinuteHand from './TickingMinuteHand';
 
 export default class extends Component {
   rings = 2;
@@ -95,6 +96,7 @@ export default class extends Component {
           <TickingHourHand label="Melbourne" timezone="Australia/Melbourne" />
           <TickingHourHand label="Amsterdam" timezone="Europe/Oslo" />
 
+          <TickingMinuteHand length={size / 8} />
           <TickingSecondsHand length={size / 6 - 10} />
         </div>
 

@@ -11,9 +11,11 @@ export default class extends Component {
         style={{
           width: length,
           transform: classnames([
-            type == 'seconds'
-              ? 'translate(-2px, -50%)'
-              : 'translate(-14px, -50%)',
+            {
+              'translate(-2px, -50%)': type === 'seconds',
+              'translate(-4px, -50%)': type === 'minutes',
+              'translate(-14px, -50%)': type !== 'seconds' && type !== 'minutes'
+            },
             `rotate(${degree - 90}deg)`
           ])
         }}
