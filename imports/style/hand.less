@@ -1,0 +1,26 @@
+.hand {
+  position: absolute;
+  background-color: @color-darkest;
+  color: @color-lightest;
+  padding: 0 10px;
+  border: 1px solid darken(@color-darkest, 10%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  i {
+    margin-right: 8px;
+    color: fade(@color-lightest, 80%);
+    font-size: 0.75rem;
+  }
+
+  &.ticker {
+    background-color: @color-accent;
+    border-color: darken(@color-accent, 20%);
+  }
+
+  &.accent {
+    background-color: @color-secondary;
+    border-color: darken(@color-secondary, 5%);
+  }
+}

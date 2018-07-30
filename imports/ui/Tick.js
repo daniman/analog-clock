@@ -4,10 +4,12 @@ import classnames from 'classnames';
 export default class extends Component {
   render() {
     const {
+      className,
       radius = 0,
       indent = 0,
       degree = 0,
-      tick,
+      line = false,
+      value,
       slice,
       shade,
       label,
@@ -16,7 +18,7 @@ export default class extends Component {
     const torad = angle => angle * (Math.PI / 180);
 
     return (
-      <div className="tock">
+      <div className={classnames(className, 'tock')}>
         {shade && (
           <div
             className="slice"
@@ -34,21 +36,25 @@ export default class extends Component {
             />
           </div>
         )}
-        <div
-          className="line"
-          style={{ width: radius, transform: `rotate(${degree - 90}deg)` }}
-        >
-          <div className={classnames(['label', { flip }])}>{label}</div>
-        </div>
-        <div
-          className="tick"
-          style={{
-            left: (radius - indent) * Math.sin(torad(180 - degree)),
-            top: (radius - indent) * Math.cos(torad(180 - degree))
-          }}
-        >
-          {tick}
-        </div>
+        {line && (
+          <div
+            className="line"
+            style={{ width: radius, transform: `rotate(${degree - 90}deg)` }}
+          >
+            <div className={classnames(['label', { flip }])}>{label}</div>
+          </div>
+        )}
+        {value && (
+          <div
+            className="value"
+            style={{
+              left: (radius - indent) * Math.sin(torad(180 - degree)),
+              top: (radius - indent) * Math.cos(torad(180 - degree))
+            }}
+          >
+            {value}
+          </div>
+        )}
       </div>
     );
   }

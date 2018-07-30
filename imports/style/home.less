@@ -1,0 +1,121 @@
+.signature {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.patches {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  .patch {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+    border: 1px solid transparent;
+    vertical-align: top;
+    text-align: center;
+
+    &:hover {
+      border-color: @color-secondary !important;
+    }
+  }
+}
+
+.home,
+.patch {
+  &.lightest {
+    background-color: @color-lightest;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.lighter {
+    background-color: @color-lighter;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.light {
+    background-color: @color-light;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.mediumlight {
+    background-color: @color-mediumlight;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.medium {
+    background-color: @color-medium;
+
+    .signature a,
+    .check {
+      color: @color-darkest;
+    }
+  }
+
+  &.mediumdark {
+    background-color: @color-mediumdark;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.dark {
+    background-color: @color-dark;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.darker {
+    background-color: @color-darker;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+
+  &.darkest {
+    background-color: @color-darkest;
+
+    .signature a,
+    .check {
+      color: @color-lightest;
+    }
+  }
+}

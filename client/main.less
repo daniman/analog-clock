@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Prata');
 
-@color-line: fade(#333, 10%);
+@import '../imports/style/home.less';
+@import '../imports/style/ring.less';
+@import '../imports/style/marker.less';
+@import '../imports/style/hand.less';
+
+@color-line: fade(@color-darkest, 10%);
 @color-accent: #f44336;
 @color-secondary: #03a9f4;
 
@@ -46,11 +51,6 @@ body {
   transition: background-color 150ms ease-out;
 }
 
-.up {
-  transform: scale(-1, -1);
-  display: inline-block;
-}
-
 .clock {
   border-radius: 100%;
   border: 1px solid @color-line;
@@ -59,19 +59,15 @@ body {
 }
 
 .fulcrum {
-  position: relative;
-  left: 50%;
-  top: 50%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
-  background-color: #222;
+  background-color: darken(@color-darkest, 10%);
   transform: translate(-50%, -50%);
+  position: absolute;
 }
 
-.ticks,
-.rings,
-.hands {
+.center {
   position: relative;
   left: 50%;
   top: 50%;
@@ -79,87 +75,14 @@ body {
   height: 0;
 }
 
-.hours .tick {
+.hours .value {
   font-family: 'Prata', serif;
   font-size: 35px;
   z-index: 999;
 }
 
-.seconds .tick {
+.seconds .value {
   font-size: 0.75rem;
-}
-
-.marker {
-  position: absolute;
-  transform-origin: 0% 0%;
-  border-top: 1px solid @color-accent;
-  text-align: right;
-  padding: 0 70px;
-  color: @color-accent;
-  font-size: 0.75rem;
-
-  &.dashed {
-    border-top-style: dashed;
-    border-color: fade(@color-accent, 100%);
-
-    .labels {
-      color: fade(@color-accent, 100%);
-    }
-  }
-
-  .labels {
-    transform: translateY(-100%);
-    padding: 2px 0;
-  }
-}
-
-.hand {
-  position: absolute;
-  transform-origin: 14px 50%;
-  background-color: @color-darkest;
-  color: @color-lightest;
-  padding: 4px 10px;
-  border-radius: 15px;
-  border: 1px solid #222;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  i {
-    margin-right: 8px;
-    color: fade(@color-lightest, 80%);
-    font-size: 0.75rem;
-  }
-
-  &.seconds {
-    background-color: @color-accent;
-    transform-origin: 2px 50%;
-    padding: 2px 0;
-    height: 1px;
-    border: none;
-    border: 1px solid darken(@color-accent, 20%);
-  }
-
-  &.minutes {
-    background-color: @color-accent;
-    transform-origin: 4px 50%;
-    padding: 4px 0;
-    height: 1px;
-    border: none;
-    border: 1px solid darken(@color-accent, 20%);
-  }
-
-  &.accent {
-    background-color: @color-secondary;
-    border-color: darken(@color-secondary, 5%);
-  }
-}
-
-.ring {
-  transform: translate(-50%, -50%);
-  border: 1px solid @color-line;
-  position: absolute;
-  border-radius: 100%;
 }
 
 .tock {
@@ -183,7 +106,7 @@ body {
     }
   }
 
-  .tick {
+  .value {
     display: inline-block;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -201,133 +124,11 @@ body {
     border: 0 solid transparent;
 
     &.light {
-      border-right-color: fade(@color-darkest, 10%);
+      border-right-color: @color-mediumlight;
     }
 
     &.dark {
-      border-right-color: fade(@color-darkest, 20%);
-    }
-  }
-}
-
-.signature {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  font-size: 0.75rem;
-  cursor: pointer;
-
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-}
-
-.patches {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-
-  .patch {
-    display: inline-block;
-    height: 20px;
-    width: 20px;
-    margin-left: 5px;
-    cursor: pointer;
-    transition: all 150ms ease-out;
-    border: 1px solid transparent;
-    vertical-align: top;
-    text-align: center;
-
-    &:hover {
-      border-color: @color-secondary !important;
-    }
-  }
-}
-
-.home,
-.patch {
-  &.lightest {
-    background-color: @color-lightest;
-
-    .signature a,
-    .check {
-      color: @color-darkest;
-    }
-  }
-
-  &.lighter {
-    background-color: @color-lighter;
-
-    .signature a,
-    .check {
-      color: @color-darkest;
-    }
-  }
-
-  &.light {
-    background-color: @color-light;
-
-    .signature a,
-    .check {
-      color: @color-darkest;
-    }
-  }
-
-  &.mediumlight {
-    background-color: @color-mediumlight;
-
-    .signature a,
-    .check {
-      color: @color-darkest;
-    }
-  }
-
-  &.medium {
-    background-color: @color-medium;
-
-    .signature a,
-    .check {
-      color: @color-darkest;
-    }
-  }
-
-  &.mediumdark {
-    background-color: @color-mediumdark;
-
-    .signature a,
-    .check {
-      color: @color-lightest;
-    }
-  }
-
-  &.dark {
-    background-color: @color-dark;
-
-    .signature a,
-    .check {
-      color: @color-lightest;
-    }
-  }
-
-  &.darker {
-    background-color: @color-darker;
-
-    .signature a,
-    .check {
-      color: @color-lightest;
-    }
-  }
-
-  &.darkest {
-    background-color: @color-darkest;
-
-    .signature a,
-    .check {
-      color: @color-lightest;
+      border-right-color: @color-medium;
     }
   }
 }
