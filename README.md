@@ -1,5 +1,5 @@
 Ideas:
-
+- [ ] Add a meeting time slider, so you can drag hands around to predict how your meeting will affect different timezones
 - [ ] Add people's photos? Or work in that concept
 - [ ] DB for easier hand configuration/changing?
 - [ ] Display dates around midnight and international date line
