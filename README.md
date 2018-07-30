@@ -1,4 +1,5 @@
 Ideas:
+- [ ] Add the ability to toggle cities if you click the arm (Apollo East)
 - [ ] Add a meeting time slider, so you can drag hands around to predict how your meeting will affect different timezones
 - [ ] Add an "Arm adder" which has a dropdown of tzs and stores your personal arms in localstorage
 - [ ] Add people's photos? Or work in that concept
