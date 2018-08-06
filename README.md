@@ -1,4 +1,6 @@
 Ideas:
+- [ ] Sweep second hand
+- [ ] A list of "people awake" during a given time
 - [ ] "Display" mode, with bigger fonts and optimized for low res TVs
 - [ ] More general configuration option
 - [ ] Add in user's DND times: https://api.slack.com/methods/dnd.info
