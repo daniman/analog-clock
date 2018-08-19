@@ -1,5 +1,6 @@
 Ideas:
 - [x] Sweep second hand
+- [x] Rotate text on hands to always be readable
 - [ ] A list of "people awake" during a given time
 - [ ] "Display" mode, with bigger fonts and optimized for low res TVs
 - [ ] More general configuration option

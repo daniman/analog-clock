@@ -11,12 +11,13 @@ class Hand extends Component {
       tertiary,
       type,
       height,
-      interval
+      interval,
+      flip
     } = this.props;
 
     return (
       <div
-        className={classnames(['hand', type, interval])}
+        className={classnames(['hand', type, interval, { flip }])}
         style={{
           width: length,
           height: height,
@@ -94,6 +95,7 @@ export default class extends Component {
         height={height}
         label={label}
         tertiary={tz && `UTC ${offset > 0 ? '+' : '-'}${Math.abs(offset)}`}
+        flip={degree % 360 > 0 && degree % 360 < 180 ? false : true}
       />
     );
   }

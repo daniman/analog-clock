@@ -7,6 +7,10 @@
   justify-content: flex-end;
   align-items: center;
 
+  &.flip > * {
+    transform: scale(-1, -1);
+  }
+
   &.seconds {
     transition: transform 1s linear;
   }
