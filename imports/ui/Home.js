@@ -52,6 +52,7 @@ export default class extends Component {
           <Patch color="dark" cb={this.setColor} />
           <Patch color="darker" cb={this.setColor} />
           <Patch color="darkest" cb={this.setColor} />
+          <Patch color="black" cb={this.setColor} />
         </div>
       </div>
     );

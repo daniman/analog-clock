@@ -71,6 +71,10 @@ export default (config = {
     {
       label: 'Amsterdam',
       timezone: 'Europe/Oslo'
+    },
+    {
+      label: 'Brisbane',
+      timezone: 'Australia/Brisbane'
     }
   ]
 });
