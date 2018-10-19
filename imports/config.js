@@ -29,7 +29,7 @@ export default (config = {
   seconds: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
   markers: [
     {
-      label: 'Greenwich Mean Time',
+      label: 'Greenwich Mean Time (UTC)',
       timezone: 'Etc/GMT-0'
     },
     {
