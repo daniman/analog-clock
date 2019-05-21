@@ -41,7 +41,7 @@ export default (config = {
   ],
   hands: [
     {
-      label: 'San Francisco',
+      label: 'Apollo West',
       timezone: 'US/Pacific'
     },
     {
@@ -49,32 +49,20 @@ export default (config = {
       timezone: 'Europe/Helsinki'
     },
     {
-      label: 'Bangkok',
-      timezone: 'Asia/Bangkok'
-    },
-    {
-      label: 'Boston',
+      label: 'Apollo East',
       timezone: 'US/Eastern'
     },
     {
-      label: 'Aguascalientes',
-      timezone: 'America/Mexico_City'
-    },
-    {
-      label: 'Lagos',
-      timezone: 'Africa/Lagos'
-    },
-    {
-      label: 'Melbourne',
-      timezone: 'Australia/Melbourne'
-    },
-    {
-      label: 'Amsterdam',
+      label: 'Amsterdam & Grenoble',
       timezone: 'Europe/Oslo'
     },
     {
-      label: 'Brisbane',
+      label: 'Byron Bay',
       timezone: 'Australia/Brisbane'
+    },
+    {
+      label: 'Wisconsin',
+      timezone: 'America/Chicago'
     }
   ]
 });
